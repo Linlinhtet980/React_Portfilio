@@ -1,0 +1,7 @@
+.container {
+  padding: 2rem;
+  padding-bottom: 4rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  text-align: center;
+}

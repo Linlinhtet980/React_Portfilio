@@ -1,0 +1,23 @@
+.spotlight {
+  position: fixed;
+  top: -250px; /* Offset by half width/height so mouse is in center */
+  left: -250px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 1; /* Below the content (nav z-index is 1000) */
+  transition: opacity 0.4s ease, filter 0.4s ease, width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.spotlight.active {
+  width: 300px;
+  height: 300px;
+  top: -200px;
+  left: -200px;
+  filter: blur(80px);
+}
+
