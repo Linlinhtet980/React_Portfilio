@@ -158,24 +158,57 @@
     padding-top: 2rem;
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.viewArchiveBtn {
+.primaryBtn {
     border-radius: 0;
     box-shadow: 6px 6px 0 var(--text-primary);
     border: 2px solid var(--text-primary);
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
     transition: all 0.2s;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
 }
 
-.viewArchiveBtn:hover {
+.primaryBtn:hover {
     transform: translateY(2px) translateX(2px);
     box-shadow: 4px 4px 0 var(--text-primary);
 }
 
-.viewArchiveBtn:active {
+.primaryBtn:active {
+    transform: translateY(6px) translateX(6px);
+    box-shadow: none;
+}
+
+.secondaryBtn {
+    border-radius: 0;
+    box-shadow: 6px 6px 0 var(--text-primary);
+    border: 2px solid var(--text-primary);
+    background-color: transparent;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+.secondaryBtn:hover {
+    transform: translateY(2px) translateX(2px);
+    box-shadow: 4px 4px 0 var(--text-primary);
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.secondaryBtn:active {
     transform: translateY(6px) translateX(6px);
     box-shadow: none;
 }

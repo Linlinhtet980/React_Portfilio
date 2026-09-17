@@ -17,7 +17,7 @@ export default function Skills() {
                         A comprehensive overview of my technical capabilities and creative disciplines, structured for clarity and precision.
                     </p>
                 </FadeUp>
-            </div>
+            </div>             
             {/* Bento Grid */}
             <div className={styles.bentoGrid} data-kid="1-1-2" data-name="bento grid container">
                 {/* Primary Area (2x2) */}

@@ -43,13 +43,21 @@ export default function Home() {
                     </FadeUp>
                 </div>
                 <FadeUp delay={0.5} className={styles.ctaContainer} data-kid="1-1-2-3" data-name="cta button container">
-                    <button className={`btn btn-primary ${styles.viewArchiveBtn}`} data-kid="1-1-2-3-1" data-name="view archive call-to-action button">
-                        VIEW ARCHIVE
+                    <a className={`btn btn-primary ${styles.primaryBtn}`} href="#projects" data-kid="1-1-2-3-1" data-name="view projects call-to-action button">
+                        VIEW PROJECTS
                         <svg data-kid="1-1-2-3-1-1" data-name="right arrow icon" fill="none" height="16" stroke="currentColor" strokeLinecap="square" strokeLinejoin="miter" strokeWidth="3" viewBox="0 0 24 24" width="16">
                             <line x1="5" x2="19" y1="12" y2="12"></line>
                             <polyline points="12 5 19 12 19"></polyline>
                         </svg>
-                    </button>
+                    </a>
+                    <a className={`btn ${styles.secondaryBtn}`} href="/Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" download="Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" data-kid="1-1-2-3-2" data-name="download cv call-to-action button">
+                        DOWNLOAD CV
+                        <svg data-kid="1-1-2-3-2-1" data-name="download icon" fill="none" height="16" stroke="currentColor" strokeLinecap="square" strokeLinejoin="miter" strokeWidth="3" viewBox="0 0 24 24" width="16">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" x2="12" y1="15" y2="3"></line>
+                        </svg>
+                    </a>
                 </FadeUp>
             </div>
             {/* Right Image Area */}
