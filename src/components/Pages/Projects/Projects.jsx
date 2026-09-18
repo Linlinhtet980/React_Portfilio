@@ -1,5 +1,4 @@
-﻿import React from 'react'
-import { ArrowUpRight, GitBranch, ExternalLink } from 'lucide-react'
+﻿import { ArrowUpRight, GitBranch, ExternalLink } from 'lucide-react'
 import styles from './Projects.module.css'
 
 const projects = [
