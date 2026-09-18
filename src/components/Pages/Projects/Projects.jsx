@@ -1,4 +1,5 @@
-﻿import { ArrowUpRight, GitBranch } from 'lucide-react'
+﻿import React from 'react'
+import { ArrowUpRight, GitBranch, ExternalLink } from 'lucide-react'
 import styles from './Projects.module.css'
 
 const projects = [
@@ -8,6 +9,7 @@ const projects = [
     type: 'Frontend', 
     icons: ['fa-brands fa-react', 'fa-brands fa-js'],
     repo: 'React_Portfilio', 
+    live: 'https://linthureinhtet.netlify.app/',
     description: 'A modern, responsive personal portfolio website featuring a dark 3D theme. Designed with modular React components and pure CSS to present my technical skills, experience, and projects in a highly professional layout.', 
     accent: 'lime' 
   },
@@ -85,9 +87,16 @@ export default function Projects() {
                 <h3 style={{ marginTop: '0' }}>{project.title}</h3>
                 <p>{project.description}</p>
               </div>
-              <a className={styles.projectLink} href={"https://github.com/Linlinhtet980/" + project.repo} target="_blank" rel="noreferrer">
-                View repository <ArrowUpRight size={14} />
-              </a>
+              <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap' }}>
+                <a className={styles.projectLink} href={"https://github.com/Linlinhtet980/" + project.repo} target="_blank" rel="noreferrer">
+                  View repository <ArrowUpRight size={14} />
+                </a>
+                {project.live && (
+                  <a className={styles.projectLink} href={project.live} target="_blank" rel="noreferrer" style={{ color: 'var(--foreground)' }}>
+                    Live Demo <ExternalLink size={14} />
+                  </a>
+                )}
+              </div>
             </article>
           )
         })}
