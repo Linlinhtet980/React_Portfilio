@@ -1,100 +1,32 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import styles from './Home.module.css';
-import TextReveal from '../../Animations/TextReveal';
-import FadeUp from '../../Animations/FadeUp';
-import profileImg from '../../../assets/Lin thu rein htet.jpg';
+﻿import { ArrowUpRight, Download } from 'lucide-react'
+import styles from './Home.module.css'
+import heroImage from '../../../assets/Lin thu rein htet.jpg'
+
+function FloatingShape({ className, children }) {
+  return <div className={[styles.floatingShape, className].join(' ')} aria-hidden="true">{children}</div>
+}
 
 export default function Home() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, 300]);
-
   return (
-    <section id="home" className={styles.section} data-kid="1" data-name="landing page section">
-        <div className={styles.layoutGrid} data-kid="1-1" data-name="layout grid">
-            {/* Sidebar / Meta */}
-            <div className={styles.sidebar} data-kid="1-1-1" data-name="sidebar meta container">
-                <div className={styles.sidebarLabelTop} data-kid="1-1-1-1" data-name="index number label">
-                    01 / Index
-                </div>
-                <div className={styles.sidebarLabelBottom} data-kid="1-1-1-2" data-name="portfolio section label">
-                    Portfolio
-                </div>
-            </div>
-            {/* Main Content Area */}
-            <div className={styles.mainContent} data-kid="1-1-2" data-name="hero content area">
-                {/* Decorative subtle grid */}
-                <div className={styles.decorativeGrid} data-kid="1-1-2-1" data-name="decorative background grid">
-                </div>
-                <div className={styles.relativeZ10} data-kid="1-1-2-2" data-name="hero headline group">
-                    <h1 className={styles.heroHeadline} data-kid="1-1-2-2-1" data-name="hero main heading">
-                        <TextReveal>LIN THU REIN</TextReveal>
-                        <br data-kid="1-1-2-2-1-1" data-name="line break"/>
-                        <TextReveal delay={0.1}>
-                            <span className={styles.heroHighlight} data-kid="1-1-2-2-1-2" data-name="hero highlight text">
-                                HTET
-                            </span>
-                        </TextReveal>
-                    </h1>
-                    <FadeUp delay={0.3}>
-                        <p className={styles.heroSubheadline} data-kid="1-1-2-2-2" data-name="hero subheadline description">
-                            Aspiring Junior Full-Stack Developer with a background in Mathematics and Business. Passionate about building minimal aesthetics and robust performance web applications.
-                        </p>
-                    </FadeUp>
-                </div>
-                <FadeUp delay={0.5} className={styles.ctaContainer} data-kid="1-1-2-3" data-name="cta button container">
-                    <a className={`btn btn-primary ${styles.primaryBtn}`} href="#projects" data-kid="1-1-2-3-1" data-name="view projects call-to-action button">
-                        VIEW PROJECTS
-                        <svg data-kid="1-1-2-3-1-1" data-name="right arrow icon" fill="none" height="16" stroke="currentColor" strokeLinecap="square" strokeLinejoin="miter" strokeWidth="3" viewBox="0 0 24 24" width="16">
-                            <line x1="5" x2="19" y1="12" y2="12"></line>
-                            <polyline points="12 5 19 12 19"></polyline>
-                        </svg>
-                    </a>
-                    <a className={`btn ${styles.secondaryBtn}`} href="/Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" download="Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" data-kid="1-1-2-3-2" data-name="download cv call-to-action button">
-                        DOWNLOAD CV
-                        <svg data-kid="1-1-2-3-2-1" data-name="download icon" fill="none" height="16" stroke="currentColor" strokeLinecap="square" strokeLinejoin="miter" strokeWidth="3" viewBox="0 0 24 24" width="16">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" x2="12" y1="15" y2="3"></line>
-                        </svg>
-                    </a>
-                </FadeUp>
-            </div>
-            {/* Right Image Area */}
-            <div className={styles.rightColumn} data-kid="1-1-3" data-name="image and status column">
-                <div className={styles.imageContainer} data-kid="1-1-3-1" data-name="portrait image container">
-                    <motion.img 
-                        style={{ y }}
-                        alt="Portrait" 
-                        className={styles.portraitImage} 
-                        data-kid="1-1-3-1-1" 
-                        data-name="designer portrait image" 
-                        decoding="async" 
-                        loading="lazy" 
-                        src={profileImg}
-                    />
-                    {/* Gradient Overlay for better contrast with the theme */}
-                    <div className={styles.gradientOverlay} data-kid="1-1-3-1-2" data-name="gradient overlay">
-                    </div>
-                </div>
-                <div className={styles.footerContainer} data-kid="1-1-3-2" data-name="location and status footer">
-                    <div className={styles.footerLabel} data-kid="1-1-3-2-1" data-name="location text container">
-                        Based in
-                        <span className={styles.footerValue} data-kid="1-1-3-2-1-1" data-name="location name">
-                            Myanmar
-                        </span>
-                    </div>
-                    <div className={`${styles.footerLabel} ${styles.footerLabelRight}`} data-kid="1-1-3-2-2" data-name="status text container">
-                        Status
-                        <span className={styles.footerValue} data-kid="1-1-3-2-2-1" data-name="availability status label">
-                            <span className={styles.pulseIndicator} data-kid="1-1-3-2-2-1-1" data-name="pulsing availability indicator">
-                            </span>
-                            Available
-                        </span>
-                    </div>
-                </div>
-            </div>
+    <section className={['container', styles.hero].join(' ')} id="top">
+      <FloatingShape className={styles.shapeOne}>&lt;/&gt;</FloatingShape>
+      <FloatingShape className={styles.shapeTwo}>✦</FloatingShape>
+      <FloatingShape className={styles.shapeThree}>{"{ }"}</FloatingShape>
+      <div className={styles.heroCopy}>
+        <p className={styles.eyebrow}><span className={styles.statusDot} /> Available for opportunities <span className={styles.eyebrowLine} /></p>
+        <h1>LIN THU<br /><span>REIN HTET</span></h1>
+        <p className={styles.heroDescription}>Aspiring Junior Full-Stack Developer with a background in Mathematics and Business. Passionate about building minimal aesthetics and robust performance web applications.</p>
+        <div className={styles.heroActions}>
+          <a className="button button-primary" href="#projects">View projects <ArrowUpRight size={17} /></a>
+          <a className="button button-ghost" href="/Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" download><Download size={16} /> Download CV</a>
         </div>
+      </div>
+      <div className={styles.heroPortrait} aria-label="Portrait of Lin Thu Rein Htet">
+        <div className={styles.portraitGlow} />
+        <img src={heroImage} alt="Lin Thu Rein Htet" />
+        <div className={styles.portraitCaption}><span>MYANMAR / 2026</span><span>FULL-STACK DEVELOPER</span></div>
+      </div>
+      <div className={styles.scrollNote}><span>Scroll to explore</span><span className={styles.scrollLine} /></div>
     </section>
-  );
+  )
 }

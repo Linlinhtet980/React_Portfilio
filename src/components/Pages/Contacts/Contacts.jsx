@@ -1,86 +1,57 @@
-import styles from './Contacts.module.css';
-import TextReveal from '../../Animations/TextReveal';
-import FadeUp from '../../Animations/FadeUp';
+﻿import  { useState } from 'react'
+import { Mail, GitBranch, Send, Check, Phone, MapPin } from 'lucide-react'
+import styles from './Contacts.module.css'
 
 export default function Contacts() {
+  const [sent, setSent] = useState(false)
+
   return (
-    <section id="contacts" className={styles.section} data-kid="1" data-name="contact section container">
-        <div className={styles.container} data-kid="1-1" data-name="contact section grid layout">
-            {/* Left: Typography & Info */}
-            <div className={styles.leftPanel} data-kid="1-1-1" data-name="information and contact details panel">
-                <div data-kid="1-1-1-1" data-name="introductory text container">
-                    <h2 className={styles.heroHeadline} data-kid="1-1-1-1-1" data-name="hero headline">
-                        <TextReveal>Let's</TextReveal>
-                        <br data-kid="1-1-1-1-1-1" data-name="line break"/>
-                        <TextReveal delay={0.1}>Talk.</TextReveal>
-                    </h2>
-                    <FadeUp delay={0.2}>
-                        <p className={styles.introDesc} data-kid="1-1-1-1-2" data-name="introductory description paragraph">
-                            Have a project in mind or just want to say hi? I'm currently available for freelance opportunities.
-                        </p>
-                    </FadeUp>
-                </div>
-                <FadeUp delay={0.3} className={styles.linksContainer} data-kid="1-1-1-2" data-name="contact links container">
-                    <h3 className={styles.sectionHeader} data-kid="1-1-1-2-1" data-name="email section header">
-                        Email
-                    </h3>
-                    <a className={styles.emailLink} data-kid="1-1-1-2-2" data-name="email address link" href="mailto:linpop890@gmail.com">
-                        linpop890@gmail.com
-                    </a>
-                    <h3 className={`${styles.sectionHeader} ${styles.socialsHeader}`} data-kid="1-1-1-2-3" data-name="socials section header">
-                        Socials
-                    </h3>
-                    <div className={styles.socialLinksContainer} data-kid="1-1-1-2-4" data-name="social links container">
-                        <a className={styles.socialLink} data-kid="1-1-1-2-4-1" data-name="facebook link" href="https://www.facebook.com/share/1BvarSo2ys/" target="_blank" rel="noopener noreferrer">
-                            Facebook
-                        </a>
-                        <a className={styles.socialLink} data-kid="1-1-1-2-4-2" data-name="telegram link" href="https://t.me/linthuren" target="_blank" rel="noopener noreferrer">
-                            Telegram
-                        </a>
-                        <a className={styles.socialLink} data-kid="1-1-1-2-4-3" data-name="linkedin link" href="https://www.linkedin.com/in/lin-thu-rein-htet-35946b356" target="_blank" rel="noopener noreferrer">
-                            LinkedIn
-                        </a>
-                        <a className={styles.socialLink} data-kid="1-1-1-2-4-4" data-name="github link" href="https://github.com/Linlinhtet980" target="_blank" rel="noopener noreferrer">
-                            GitHub
-                        </a>
-                    </div>
-                </FadeUp>
+    <section className={['section container', styles.contact].join(' ')} id="contact">
+      <div className={styles.contactCard}>
+        <div>
+          <div className={styles.sectionLabel}>04 <span>Get in touch</span></div>
+          <h2>Let's <em>talk.</em></h2>
+          <p>Have a project in mind, or just want to say hello? My inbox is always open.</p>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <a className={styles.emailLink} href="mailto:linpop890@gmail.com">
+              <Mail size={17} /> linpop890@gmail.com
+            </a>
+            <a className={styles.emailLink} href="tel:09890647598">
+              <Phone size={17} /> 09-890647598
+            </a>
+            <div className={styles.emailLink} style={{ cursor: 'default' }}>
+              <MapPin size={17} /> Yangon, Insein, Myanmar
             </div>
-            {/* Right: Stark Form */}
-            <div className={styles.rightPanel} data-kid="1-1-2" data-name="contact form panel">
-                <form className={styles.form} data-kid="1-1-2-1" data-name="contact form">
-                    <FadeUp delay={0.1}>
-                        <div className={styles.fieldContainer} data-kid="1-1-2-1-1" data-name="name field container">
-                            <label className={styles.fieldLabel} data-kid="1-1-2-1-1-1" data-name="name field label" htmlFor="name">
-                                01. What's your name?
-                            </label>
-                            <input className={styles.inputField} data-kid="1-1-2-1-1-2" data-name="name input field" id="name" placeholder="John Doe" type="text"/>
-                        </div>
-                    </FadeUp>
-                    <FadeUp delay={0.2}>
-                        <div className={styles.fieldContainer} data-kid="1-1-2-1-2" data-name="email field container">
-                            <label className={styles.fieldLabel} data-kid="1-1-2-1-2-1" data-name="email field label" htmlFor="email">
-                                02. What's your email?
-                            </label>
-                            <input className={styles.inputField} data-kid="1-1-2-1-2-2" data-name="email input field" id="email" placeholder="john@doe.com" type="email"/>
-                        </div>
-                    </FadeUp>
-                    <FadeUp delay={0.3}>
-                        <div className={styles.fieldContainer} data-kid="1-1-2-1-3" data-name="message field container">
-                            <label className={styles.fieldLabel} data-kid="1-1-2-1-3-1" data-name="message field label" htmlFor="message">
-                                03. Tell me about your project
-                            </label>
-                            <textarea className={`${styles.inputField} ${styles.textArea}`} data-kid="1-1-2-1-3-2" data-name="message text area" id="message" placeholder="Hello..." rows="3"></textarea>
-                        </div>
-                    </FadeUp>
-                    <FadeUp delay={0.4} className={styles.submitBtnContainer} data-kid="1-1-2-1-4" data-name="submit button container">
-                        <button className={`btn btn-primary ${styles.submitBtn}`} data-kid="1-1-2-1-4-1" data-name="send message button" type="button">
-                            Send Message
-                        </button>
-                    </FadeUp>
-                </form>
-            </div>
+          </div>
+
+          <div className={styles.socials}>
+            <a href="https://www.facebook.com/share/1BvarSo2ys/" target="_blank" rel="noreferrer" aria-label="Facebook">
+              <i className="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://t.me/linthuren" target="_blank" rel="noreferrer" aria-label="Telegram">
+              <i className="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/lin-thu-rein-htet-35946b356" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <i className="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Linlinhtet980" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <GitBranch size={17} />
+            </a>
+          </div>
         </div>
+        <form className={styles.form} onSubmit={(event) => { event.preventDefault(); setSent(true) }}>
+          <label htmlFor="name">Your name</label>
+          <input className={styles.input} id="name" name="name" placeholder="Jane Smith" required />
+          <label htmlFor="email">Email address</label>
+          <input className={styles.input} id="email" name="email" type="email" placeholder="jane@company.com" required />
+          <label htmlFor="message">Message</label>
+          <textarea className={styles.textarea} id="message" name="message" placeholder="Tell me a little about your project..." required />
+          <button className="button button-primary" type="submit" style={{marginTop: '20px'}}>
+            {sent ? 'Message sent' : 'Send message'} {sent ? <Check size={17} /> : <Send size={15} />}
+          </button>
+        </form>
+      </div>
     </section>
-  );
+  )
 }

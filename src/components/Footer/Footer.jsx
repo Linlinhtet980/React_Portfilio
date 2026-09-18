@@ -1,9 +1,11 @@
-import styles from './Footer.module.css';
+﻿import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
-    <footer className={styles.container}>
-      <p>&copy; {new Date().getFullYear()} My Portfolio. All rights reserved.</p>
+    <footer className={['container', styles.footer].join(' ')}>
+      <span>© 2026 Lin Thu Rein Htet</span>
+      <span>Designed & built with intention.</span>
+      <a href="#top">Back to top ↑</a>
     </footer>
-  );
+  )
 }

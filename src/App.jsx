@@ -1,37 +1,25 @@
-import { useState } from 'react'
-import './App.css'
+﻿import styles from './App.module.css'
 import Navbar from './components/Navbar/Navbar'
 import Home from './components/Pages/Home/Home'
 import About from './components/Pages/About/About'
-import Skills from './components/Pages/Skills/Skills'
 import Projects from './components/Pages/Projects/Projects'
-import Education from './components/Pages/Education/Education'
+import Skills from './components/Pages/Skills/Skills'
+import Experience from './components/Pages/Education/Education'
 import Contacts from './components/Pages/Contacts/Contacts'
 import Footer from './components/Footer/Footer'
-import Loading from './components/Loading/Loading'
-import Spotlight from './components/Effects/Spotlight'
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  if (isLoading) {
-    return <Loading onFinish={() => setIsLoading(false)} />;
-  }
-
+export default function App() {
   return (
-    <div className="app">
-      <Spotlight />
+    <main className={styles.siteShell}>
+      <div className={styles.noise} aria-hidden="true" />
       <Navbar />
       <Home />
       <About />
-      <Education />
-      <Skills />
       <Projects />
+      <Skills />
+      <Experience />
       <Contacts />
       <Footer />
-    </div>
+    </main>
   )
 }
-
-export default App
-

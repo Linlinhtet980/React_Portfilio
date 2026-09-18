@@ -1,111 +1,91 @@
-import styles from './Education.module.css';
-import TextReveal from '../../Animations/TextReveal';
-import FadeUp from '../../Animations/FadeUp';
+﻿import { useState } from 'react'
+import { Code2, GraduationCap, BriefcaseBusiness, ChevronDown } from 'lucide-react'
+import styles from './Education.module.css'
+
+const timeline = [
+  { 
+    year: '2025 - PRESENT', 
+    title: 'Full-Stack Developer Trainee', 
+    place: 'O-Technique International Myanmar', 
+    icon: Code2,
+    description: "Mastered the complete Software Development Lifecycle—from system design to deployment—while building full-stack applications to solve real-world business problems."
+  },
+  { 
+    year: '2025', 
+    title: 'B.Sc. Mathematics', 
+    place: 'Hakha University — GPA 3.33', 
+    icon: GraduationCap,
+    description: "Graduating with a 3.33 GPA demonstrates my persistence and ability to quickly grasp and master complex, abstract concepts."
+  },
+  { 
+    year: '2021 - 2024', 
+    title: 'Office Assistant', 
+    place: 'UEC (Union Election Committee)', 
+    icon: BriefcaseBusiness,
+    description: "Collaborated across various departments, developing strong communication soft skills and the adaptability to efficiently resolve diverse operational challenges."
+  },
+  { 
+    year: '2020', 
+    title: 'Bachelor of Business Association', 
+    place: 'Chin Christian University', 
+    icon: GraduationCap,
+    description: "Gained a deep understanding of business operations and management, allowing me to build technical solutions that directly address and solve core business needs."
+  },
+]
 
 export default function Education() {
+  const [expandedIndex, setExpandedIndex] = useState(null)
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index)
+  }
+
   return (
-    <section className={styles.section} data-kid="1" data-name="education and experience section" id="education">
-        <div className={styles.container} data-kid="1-1" data-name="container">
-            {/* Section Header */}
-            <div className={styles.headerContainer} data-kid="1-1-1" data-name="section header container">
-                <h2 className={styles.sectionTitle} data-kid="1-1-1-1" data-name="section title heading">
-                    <TextReveal>Education</TextReveal>
-                    <br data-kid="1-1-1-1-1" data-name="line break"/>
-                    <TextReveal delay={0.1}>&amp; Experience</TextReveal>
-                </h2>
-                <FadeUp delay={0.2} className={styles.sectionMeta} data-kid="1-1-1-2" data-name="section metadata container">
-                    <p className={styles.sectionMetaLabel} data-kid="1-1-1-2-1" data-name="section description label">
-                        Curriculum Vitae
-                    </p>
-                    <p className={styles.sectionMetaDate} data-kid="1-1-1-2-2" data-name="date range label">
-                        2018 — Present
-                    </p>
-                </FadeUp>
+    <section className="section container" id="experience">
+      <div className={styles.sectionLabel}>03 <span>Experience & education</span></div>
+      <div className={styles.sectionHeading}>
+        <h2>The path <em>so far.</em></h2>
+        <p>Every chapter adds a new perspective to the way I build and collaborate.</p>
+      </div>
+      <div className={styles.timeline}>
+        {timeline.map((item, index) => { 
+          const Icon = item.icon;
+          const isExpanded = expandedIndex === index;
+          
+          return (
+            <div 
+              className={styles.timelineItem} 
+              key={item.year + item.title}
+              onClick={() => toggleExpand(index)}
+            >
+              <div className={styles.timelineMarker}><Icon size={17} /></div>
+              <div className={styles.timelineContent}>
+                <span className={styles.timelineYear}>{item.year}</span>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <h3>{item.title}</h3>
+                  <ChevronDown 
+                    size={18} 
+                    style={{ 
+                      color: 'var(--muted)', 
+                      transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.3s ease'
+                    }} 
+                  />
+                </div>
+                <p>{item.place}</p>
+                
+                <div className={[styles.timelineDesc, isExpanded ? styles.expanded : ''].join(' ')}>
+                  <div className={styles.timelineDescInner}>
+                    {item.description}
+                  </div>
+                </div>
+
+              </div>
+              <span className={styles.timelineIndex}>0{index + 1}</span>
             </div>
-            {/* Timeline Grid */}
-            <div className={styles.timelineGrid} data-kid="1-1-2" data-name="timeline grid">
-                {/* Timeline Item 1 */}
-                <FadeUp delay={0.1} className={styles.timelineItem} data-kid="1-1-2-1" data-name="timeline item 1">
-                    <div className={styles.timelineDateColumn} data-kid="1-1-2-1-1" data-name="timeline date container">
-                        <span className={styles.timelineDateText} data-kid="1-1-2-1-1-1" data-name="timeline date range">
-                            2025 —
-                            <br data-kid="1-1-2-1-1-1-1" data-name="line break"/>
-                            Present
-                        </span>
-                    </div>
-                    <div className={styles.timelineContentColumn} data-kid="1-1-2-1-2" data-name="timeline content container">
-                        <h3 className={styles.timelineItemTitle} data-kid="1-1-2-1-2-1" data-name="timeline item title">
-                            Full-Stack Developer Trainee
-                        </h3>
-                        <h4 className={styles.timelineItemOrg} data-kid="1-1-2-1-2-2" data-name="timeline item organization">
-                            O-Technique International Myanmar
-                        </h4>
-                        <p className={styles.timelineItemDesc} data-kid="1-1-2-1-2-3" data-name="timeline item description">
-                            Currently undergoing intensive training in Full-Stack Development and Website Design. Expanding knowledge in advanced JavaScript, React, and Node.js.
-                        </p>
-                    </div>
-                </FadeUp>
-                {/* Timeline Item 2 */}
-                <FadeUp delay={0.2} className={styles.timelineItem} data-kid="1-1-2-2" data-name="timeline item 2">
-                    <div className={styles.timelineDateColumn} data-kid="1-1-2-2-1" data-name="timeline date container">
-                        <span className={styles.timelineDateText} data-kid="1-1-2-2-1-1" data-name="timeline date range">
-                            2021 —
-                            <br data-kid="1-1-2-2-1-1-1" data-name="line break"/>
-                            2024
-                        </span>
-                    </div>
-                    <div className={styles.timelineContentColumn} data-kid="1-1-2-2-2" data-name="timeline content container">
-                        <h3 className={styles.timelineItemTitle} data-kid="1-1-2-2-2-1" data-name="timeline item title">
-                            Office Assistant
-                        </h3>
-                        <h4 className={styles.timelineItemOrg} data-kid="1-1-2-2-2-2" data-name="timeline item organization">
-                            UEC (Union Election Committee)
-                        </h4>
-                        <p className={styles.timelineItemDesc} data-kid="1-1-2-2-2-3" data-name="timeline item description">
-                            Supported daily office operations and administrative tasks. Assisted with communication and document handling. Developed responsibility, organization, and teamwork skills.
-                        </p>
-                    </div>
-                </FadeUp>
-                {/* Timeline Item 3 */}
-                <FadeUp delay={0.3} className={styles.timelineItem} data-kid="1-1-2-3" data-name="timeline item 3">
-                    <div className={styles.timelineDateColumn} data-kid="1-1-2-3-1" data-name="timeline date container">
-                        <span className={styles.timelineDateText} data-kid="1-1-2-3-1-1" data-name="timeline date range">
-                            2025
-                        </span>
-                    </div>
-                    <div className={styles.timelineContentColumn} data-kid="1-1-2-3-2" data-name="timeline content container">
-                        <h3 className={styles.timelineItemTitle} data-kid="1-1-2-3-2-1" data-name="timeline item title">
-                            B.Sc. Mathematics
-                        </h3>
-                        <h4 className={styles.timelineItemOrg} data-kid="1-1-2-3-2-2" data-name="timeline item organization">
-                            Hakha University
-                        </h4>
-                        <p className={styles.timelineItemDesc} data-kid="1-1-2-3-2-3" data-name="timeline item description">
-                            Graduated with a GPA of 3.33. Built a strong foundation in analytical and logical thinking.
-                        </p>
-                    </div>
-                </FadeUp>
-                {/* Timeline Item 4 */}
-                <FadeUp delay={0.4} className={styles.timelineItem} data-kid="1-1-2-4" data-name="timeline item 4">
-                    <div className={styles.timelineDateColumn} data-kid="1-1-2-4-1" data-name="timeline date container">
-                        <span className={styles.timelineDateText} data-kid="1-1-2-4-1-1" data-name="timeline date range">
-                            2020
-                        </span>
-                    </div>
-                    <div className={styles.timelineContentColumn} data-kid="1-1-2-4-2" data-name="timeline content container">
-                        <h3 className={styles.timelineItemTitle} data-kid="1-1-2-4-2-1" data-name="timeline item title">
-                            Bachelor of Business Association
-                        </h3>
-                        <h4 className={styles.timelineItemOrg} data-kid="1-1-2-4-2-2" data-name="timeline item organization">
-                            Chin Christian University
-                        </h4>
-                        <p className={styles.timelineItemDesc} data-kid="1-1-2-4-2-3" data-name="timeline item description">
-                            Developed a solid understanding of business administration, communication, and organizational structures.
-                        </p>
-                    </div>
-                </FadeUp>
-            </div>
-        </div>
+          )
+        })}
+      </div>
     </section>
-  );
+  )
 }
