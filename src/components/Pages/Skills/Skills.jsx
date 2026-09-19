@@ -63,29 +63,31 @@ export default function Skills() {
         {skillGroups.map((group, idx) => {
           const accentClass = group.accent === 'lime' ? styles.accentLime : group.accent === 'violet' ? styles.accentViolet : group.accent === 'blue' ? styles.accentBlue : styles.accentOrange;
           return (
-            <ScrollReveal className={[styles.skillCard, accentClass].join(' ')} key={group.number} animation="fadeUp" delay={0.1 * idx}>
-              <div className={styles.skillTop}>
-                <span>{group.number}</span>
-                <Code2 size={20} />
-              </div>
-              <h3>{group.title}</h3>
-              <ul>
-                {group.items.map(item => {
-                  let checkColor = 'var(--muted)';
-                  if (item.level === 'expert') checkColor = '#F5C518'; 
-                  if (item.level === 'learning') checkColor = '#3b82f6'; 
+            <ScrollReveal key={group.number} animation="fadeUp" delay={0.1 * idx} style={{ display: 'flex' }}>
+              <article className={[styles.skillCard, accentClass].join(' ')} style={{ width: '100%' }}>
+                <div className={styles.skillTop}>
+                  <span>{group.number}</span>
+                  <Code2 size={20} />
+                </div>
+                <h3>{group.title}</h3>
+                <ul>
+                  {group.items.map(item => {
+                    let checkColor = 'var(--muted)';
+                    if (item.level === 'expert') checkColor = '#F5C518'; 
+                    if (item.level === 'learning') checkColor = '#3b82f6'; 
 
-                  return (
-                    <li key={item.name}>
-                      <span style={{ color: checkColor }}><Check size={12} strokeWidth={3} /></span>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <i className={item.icon} style={{ fontSize: '13px', opacity: 0.8, width: '14px', textAlign: 'center' }}></i>
-                        {item.name}
-                      </div>
-                    </li>
-                  )
-                })}
-              </ul>
+                    return (
+                      <li key={item.name}>
+                        <span style={{ color: checkColor }}><Check size={12} strokeWidth={3} /></span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <i className={item.icon} style={{ fontSize: '13px', opacity: 0.8, width: '14px', textAlign: 'center' }}></i>
+                          {item.name}
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </article>
             </ScrollReveal>
           )
         })}

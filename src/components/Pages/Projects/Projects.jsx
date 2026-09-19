@@ -72,31 +72,33 @@ export default function Projects() {
           const accentClass = project.accent === 'violet' ? styles.accentViolet : project.accent === 'blue' ? styles.accentBlue : project.accent === 'orange' ? styles.accentOrange : '';
           
           return (
-            <ScrollReveal className={[styles.projectCard, accentClass].join(' ')} key={project.number} animation="fadeUp" delay={0.1 * (idx % 3)}>
-              <div className={styles.projectTop}>
-                <span>{project.number}</span>
-                <a href={"https://github.com/Linlinhtet980/" + project.repo} target="_blank" rel="noreferrer" aria-label={"Open " + project.title + " on GitHub"}><GitBranch size={17} /></a>
-              </div>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                  {project.icons.map(icon => (
-                    <i key={icon} className={icon} style={{ fontSize: '18px', color: 'var(--muted)' }}></i>
-                  ))}
-                  <span className={styles.projectType} style={{ marginLeft: 'auto' }}>{project.type}</span>
+            <ScrollReveal key={project.number} animation="fadeUp" delay={0.1 * (idx % 3)} style={{ display: 'flex' }}>
+              <article className={[styles.projectCard, accentClass].join(' ')} style={{ width: '100%' }}>
+                <div className={styles.projectTop}>
+                  <span>{project.number}</span>
+                  <a href={"https://github.com/Linlinhtet980/" + project.repo} target="_blank" rel="noreferrer" aria-label={"Open " + project.title + " on GitHub"}><GitBranch size={17} /></a>
                 </div>
-                <h3 style={{ marginTop: '0' }}>{project.title}</h3>
-                <p>{project.description}</p>
-              </div>
-              <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap' }}>
-                <a className={styles.projectLink} href={"https://github.com/Linlinhtet980/" + project.repo} target="_blank" rel="noreferrer">
-                  View repository <ArrowUpRight size={14} />
-                </a>
-                {project.live && (
-                  <a className={styles.projectLink} href={project.live} target="_blank" rel="noreferrer" style={{ color: 'var(--foreground)' }}>
-                    Live Demo <ExternalLink size={14} />
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                    {project.icons.map(icon => (
+                      <i key={icon} className={icon} style={{ fontSize: '18px', color: 'var(--muted)' }}></i>
+                    ))}
+                    <span className={styles.projectType} style={{ marginLeft: 'auto' }}>{project.type}</span>
+                  </div>
+                  <h3 style={{ marginTop: '0' }}>{project.title}</h3>
+                  <p>{project.description}</p>
+                </div>
+                <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <a className={styles.projectLink} href={"https://github.com/Linlinhtet980/" + project.repo} target="_blank" rel="noreferrer">
+                    View repository <ArrowUpRight size={14} />
                   </a>
-                )}
-              </div>
+                  {project.live && (
+                    <a className={styles.projectLink} href={project.live} target="_blank" rel="noreferrer" style={{ color: 'var(--foreground)' }}>
+                      Live Demo <ExternalLink size={14} />
+                    </a>
+                  )}
+                </div>
+              </article>
             </ScrollReveal>
           )
         })}

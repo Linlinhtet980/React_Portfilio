@@ -55,13 +55,14 @@ export default function Education() {
           
           return (
             <ScrollReveal 
-              className={styles.timelineItem} 
               key={item.year + item.title}
               animation="fadeUp"
               delay={0.1 * index}
-              style={{ cursor: 'pointer' }}
             >
-              <div style={{ display: 'contents' }} onClick={() => toggleExpand(index)}>
+              <div 
+                className={styles.timelineItem} 
+                onClick={() => toggleExpand(index)}
+              >
                 <div className={styles.timelineMarker}><Icon size={17} /></div>
                 <div className={styles.timelineContent}>
                   <span className={styles.timelineYear}>{item.year}</span>
