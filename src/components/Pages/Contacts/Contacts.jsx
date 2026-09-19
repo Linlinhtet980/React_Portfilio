@@ -24,7 +24,7 @@ export default function Contacts() {
       } else {
         setStatus('error');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
     }
   };
