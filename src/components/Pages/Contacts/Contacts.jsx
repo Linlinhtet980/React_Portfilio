@@ -1,4 +1,4 @@
-﻿import  { useState } from 'react'
+import  { useState } from 'react'
 import { Mail, GitBranch, Send, Check, Phone, MapPin, Loader2, AlertCircle } from 'lucide-react'
 import styles from './Contacts.module.css'
 
@@ -58,6 +58,9 @@ export default function Contacts() {
             </a>
             <a href="https://www.linkedin.com/in/lin-thu-rein-htet-35946b356" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <i className="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/linthurinhtet/" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <i className="fa-brands fa-instagram"></i>
             </a>
             <a href="https://github.com/Linlinhtet980" target="_blank" rel="noreferrer" aria-label="GitHub">
               <GitBranch size={17} />
