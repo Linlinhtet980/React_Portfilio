@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './ScrollReveal.module.css';
 
 export default function ScrollReveal({ 
@@ -6,7 +6,8 @@ export default function ScrollReveal({
   animation = 'fadeUp',
   delay = 0,
   duration = 0.6,
-  className = ''
+  className = '',
+  style = {}
 }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -37,7 +38,8 @@ export default function ScrollReveal({
     };
   }, []);
 
-  const style = {
+  const mergedStyle = {
+    ...style,
     transitionDelay: `${delay}s`,
     transitionDuration: `${duration}s`,
   };
@@ -48,7 +50,7 @@ export default function ScrollReveal({
     <div 
       ref={ref} 
       className={`${styles.revealWrapper} ${animationClass} ${isVisible ? styles.visible : ''} ${className}`}
-      style={style}
+      style={mergedStyle}
     >
       {children}
     </div>
