@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <section className={['container', styles.hero].join(' ')} id="top">
       <FloatingShape className={styles.shapeOne}>&lt;/&gt;</FloatingShape>
-      <FloatingShape className={styles.shapeTwo}>?</FloatingShape>
       <FloatingShape className={styles.shapeThree}>{"{ }"}</FloatingShape>
       
       <ScrollReveal className={styles.heroCopy} animation="fadeRight" duration={0.8}>

@@ -16,7 +16,6 @@
 
 .floatingShape { position:absolute; font-family:monospace; color:var(--muted); opacity:.45; z-index:2; }
 .shapeOne { right:48%; top:17%; color:var(--lime); font-size:19px; transform:rotate(-10deg); }
-.shapeTwo { right:9%; top:19%; font-size:30px; color:var(--violet); }
 .shapeThree { left:46%; bottom:11%; font-size:22px; color:var(--blue); }
 
 .scrollNote { position:absolute; bottom:28px; left:0; display:flex; align-items:center; gap:15px; color:var(--muted); font-size:9px; letter-spacing:.13em; text-transform:uppercase; z-index:3; }
