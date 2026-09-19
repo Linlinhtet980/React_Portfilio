@@ -1,5 +1,6 @@
 ﻿import { ArrowUpRight, GitBranch, ExternalLink } from 'lucide-react'
 import styles from './Projects.module.css'
+import ScrollReveal from '../../ScrollReveal/ScrollReveal'
 
 const projects = [
   { 
@@ -62,16 +63,16 @@ const projects = [
 export default function Projects() {
   return (
     <section className="section container" id="projects">
-      <div className={styles.sectionLabel}>02 <span>Selected projects</span></div>
-      <div className={styles.sectionHeading}>
+      <ScrollReveal className={styles.sectionLabel} animation="fadeUp">02 <span>Selected projects</span></ScrollReveal>
+      <ScrollReveal className={styles.sectionHeading} animation="fadeUp" delay={0.1}>
         <h2>Work with <em>purpose.</em></h2>
-      </div>
+      </ScrollReveal>
       <div className={styles.projectsGrid}>
-        {projects.map(project => {
+        {projects.map((project, idx) => {
           const accentClass = project.accent === 'violet' ? styles.accentViolet : project.accent === 'blue' ? styles.accentBlue : project.accent === 'orange' ? styles.accentOrange : '';
           
           return (
-            <article className={[styles.projectCard, accentClass].join(' ')} key={project.number}>
+            <ScrollReveal className={[styles.projectCard, accentClass].join(' ')} key={project.number} animation="fadeUp" delay={0.1 * (idx % 3)}>
               <div className={styles.projectTop}>
                 <span>{project.number}</span>
                 <a href={"https://github.com/Linlinhtet980/" + project.repo} target="_blank" rel="noreferrer" aria-label={"Open " + project.title + " on GitHub"}><GitBranch size={17} /></a>
@@ -96,7 +97,7 @@ export default function Projects() {
                   </a>
                 )}
               </div>
-            </article>
+            </ScrollReveal>
           )
         })}
       </div>

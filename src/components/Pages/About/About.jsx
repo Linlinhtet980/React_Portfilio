@@ -1,21 +1,28 @@
-﻿import  { useState } from 'react'
+﻿import { useState } from 'react'
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
 import styles from './About.module.css'
+import ScrollReveal from '../../ScrollReveal/ScrollReveal'
 
 export default function About() {
   const [expanded, setExpanded] = useState(false)
 
   return (
     <section className="section container" id="about">
-      <div className={styles.sectionLabel}>01 <span>About me</span></div>
+      <ScrollReveal className={styles.sectionLabel} animation="fadeUp">
+        01 <span>About me</span>
+      </ScrollReveal>
+      
       <div className={styles.aboutGrid}>
-        <h2>Turning curiosity<br />into <em>capability.</em></h2>
-        <div>
+        <ScrollReveal animation="fadeRight" delay={0.1}>
+          <h2>Turning curiosity<br />into <em>capability.</em></h2>
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fadeLeft" delay={0.2}>
           <p className={styles.lead}>
             My journey into software development didn't start with a computer science degree; it started in an office.
           </p>
           <p>
-            During my years as an Office Assistant, I spent countless hours managing data and workflows. It was there I realized the transformative power of technology—I wanted to build the systems that made work easier and faster.
+            During my years as an Office Assistant, I spent countless hours managing data and workflows. It was there I realized the transformative power of technology-I wanted to build the systems that made work easier and faster.
           </p>
           
           <div className={[styles.storyWrapper, expanded ? styles.expanded : ''].join(' ')}>
@@ -37,7 +44,7 @@ export default function About() {
             {expanded ? 'Show less' : 'More about my journey'} 
             {expanded ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
           </button>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

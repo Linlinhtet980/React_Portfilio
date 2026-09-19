@@ -1,5 +1,6 @@
-import { Code2, Check } from 'lucide-react'
+﻿import { Code2, Check } from 'lucide-react'
 import styles from './Skills.module.css'
+import ScrollReveal from '../../ScrollReveal/ScrollReveal'
 
 const skillGroups = [
   { 
@@ -53,16 +54,16 @@ const skillGroups = [
 export default function Skills() {
   return (
     <section className="section container" id="skills">
-      <div className={styles.sectionLabel}>03 <span>Technical toolkit</span></div>
-      <div className={styles.sectionHeading}>
+      <ScrollReveal className={styles.sectionLabel} animation="fadeUp">03 <span>Technical toolkit</span></ScrollReveal>
+      <ScrollReveal className={styles.sectionHeading} animation="fadeUp" delay={0.1}>
         <h2>Built on a <em>curious mind.</em></h2>
         <p>A growing toolkit for thoughtful, useful, and well-crafted digital products.</p>
-      </div>
+      </ScrollReveal>
       <div className={styles.skillsGrid}>
-        {skillGroups.map((group) => {
+        {skillGroups.map((group, idx) => {
           const accentClass = group.accent === 'lime' ? styles.accentLime : group.accent === 'violet' ? styles.accentViolet : group.accent === 'blue' ? styles.accentBlue : styles.accentOrange;
           return (
-            <article className={[styles.skillCard, accentClass].join(' ')} key={group.number}>
+            <ScrollReveal className={[styles.skillCard, accentClass].join(' ')} key={group.number} animation="fadeUp" delay={0.1 * idx}>
               <div className={styles.skillTop}>
                 <span>{group.number}</span>
                 <Code2 size={20} />
@@ -71,8 +72,8 @@ export default function Skills() {
               <ul>
                 {group.items.map(item => {
                   let checkColor = 'var(--muted)';
-                  if (item.level === 'expert') checkColor = '#F5C518'; // Golden Yellow
-                  if (item.level === 'learning') checkColor = '#3b82f6'; // Blue
+                  if (item.level === 'expert') checkColor = '#F5C518'; 
+                  if (item.level === 'learning') checkColor = '#3b82f6'; 
 
                   return (
                     <li key={item.name}>
@@ -85,19 +86,19 @@ export default function Skills() {
                   )
                 })}
               </ul>
-            </article>
+            </ScrollReveal>
           )
         })}
       </div>
       
-      <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '12px', color: 'var(--muted)', alignItems: 'center' }}>
+      <ScrollReveal style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '12px', color: 'var(--muted)', alignItems: 'center' }} animation="fadeUp" delay={0.4}>
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
           <span style={{ color: '#F5C518' }}><Check size={12} strokeWidth={3} /></span> Proficient
         </div>
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
           <span style={{ color: '#3b82f6' }}><Check size={12} strokeWidth={3} /></span> Learning
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   )
 }
