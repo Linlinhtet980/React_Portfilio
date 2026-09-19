@@ -1,7 +1,7 @@
-.sectionLabel { color:var(--lime); font-size:10px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; }
+﻿.sectionLabel { color:var(--lime); font-size:10px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; }
 .sectionLabel span { color:var(--muted); }
 .sectionHeading { display:flex; flex-direction:column; align-items:flex-start; margin:72px 0 40px; gap:16px; }
-.sectionHeading p { max-width:500px; margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+.sectionHeading p { max-width:500px; margin:0; color:var(--muted); font-size:15.5px; line-height:1.6; }
 
 .timeline { margin-top:72px; border-top:1px solid var(--line); }
 .timelineItem { display:grid; grid-template-columns:70px 1fr 50px; gap:24px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); }

@@ -1,7 +1,7 @@
-.sectionLabel { color:var(--lime); font-size:10px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; }
+﻿.sectionLabel { color:var(--lime); font-size:10px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; }
 .sectionLabel span { color:var(--muted); }
 .sectionHeading { display:flex; flex-direction:column; align-items:flex-start; margin:72px 0 40px; gap:16px; }
-.sectionHeading p { max-width:500px; margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+.sectionHeading p { max-width:500px; margin:0; color:var(--muted); font-size:15.5px; line-height:1.6; }
 .projectsGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 .projectCard { min-height:365px; padding:23px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); background:rgba(255,255,255,.025); transition:transform .2s,border-color .2s,background .2s; }
 .projectCard:hover { transform:translateY(-5px); border-color:var(--lime); background:rgba(255,255,255,.045); }

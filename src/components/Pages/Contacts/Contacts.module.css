@@ -1,9 +1,9 @@
-.contact { border:0; padding-bottom:65px; }
+﻿.contact { border:0; padding-bottom:65px; }
 .contactCard { display:grid; grid-template-columns:1fr 1fr; gap:90px; padding:70px; background:#111212; border:1px solid var(--line); }
 .sectionLabel { color:var(--lime); font-size:10px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; }
 .sectionLabel span { color:var(--muted); text-transform:none; }
 .contactCard h2 { margin-top:45px; }
-.contactCard > div > p { max-width:330px; color:var(--muted); line-height:1.6; font-size:14px; margin:24px 0; }
+.contactCard > div > p { max-width:330px; color:var(--muted); line-height:1.6; font-size:15.5px; margin:24px 0; }
 .emailLink { display:flex; gap:9px; align-items:center; color:var(--lime); font-size:13px; }
 .socials { display:flex; gap:9px; margin-top:58px; }
 .socials a { width:35px; height:35px; border:1px solid var(--line); display:grid; place-items:center; color:var(--muted); font-size:16px; }
@@ -11,7 +11,7 @@
 
 .form { display:flex; flex-direction:column; gap:9px; }
 .form label { color:var(--muted); font-size:10px; letter-spacing:.12em; text-transform:uppercase; margin-top:9px; }
-.input, .textarea { background:transparent; border:0; border-bottom:1px solid var(--line); color:var(--foreground); padding:10px 0; font:inherit; font-size:14px; outline:none; resize:vertical; }
+.input, .textarea { background:transparent; border:0; border-bottom:1px solid var(--line); color:var(--foreground); padding:10px 0; font:inherit; font-size:15.5px; outline:none; resize:vertical; }
 .input:focus, .textarea:focus { border-color:var(--lime); }
 .textarea { min-height:80px; }
 
