@@ -1,4 +1,5 @@
-﻿import { ArrowUpRight, Download } from 'lucide-react'
+﻿import { ArrowUpRight, Download, Check } from 'lucide-react'
+import { useState } from 'react'
 import styles from './Home.module.css'
 import heroImage from '../../../assets/Lin thu rein htet.jpg'
 import ScrollReveal from '../../ScrollReveal/ScrollReveal'
@@ -8,6 +9,13 @@ function FloatingShape({ className, children }) {
 }
 
 export default function Home() {
+  const [isDownloaded, setIsDownloaded] = useState(false);
+
+  const handleDownload = () => {
+    setIsDownloaded(true);
+    setTimeout(() => setIsDownloaded(false), 3000);
+  };
+
   return (
     <section className={['container', styles.hero].join(' ')} id="top">
       <FloatingShape className={styles.shapeOne}>&lt;/&gt;</FloatingShape>
@@ -19,7 +27,21 @@ export default function Home() {
         <p className={styles.heroDescription}>Aspiring Junior Full-Stack Developer with a background in Mathematics and Business. Passionate about building minimal aesthetics and robust performance web applications.</p>
         <div className={styles.heroActions}>
           <a className="button button-primary" href="#projects">View projects <ArrowUpRight size={17} /></a>
-          <a className="button button-ghost" href="/Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" download><Download size={16} /> Download CV</a>
+          <a 
+            className={`button button-ghost ${styles.downloadBtn} ${isDownloaded ? styles.downloaded : ''}`} 
+            href="/Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" 
+            download
+            onClick={handleDownload}
+          >
+            <div className={styles.iconWrapper}>
+              <Download size={16} className={styles.downloadIcon} />
+              <Check size={16} className={styles.checkIcon} />
+            </div>
+            <span className={styles.btnTextWrapper}>
+              <span className={styles.textOriginal}>Download CV</span>
+              <span className={styles.textSuccess}>Downloaded</span>
+            </span>
+          </a>
         </div>
       </ScrollReveal>
 

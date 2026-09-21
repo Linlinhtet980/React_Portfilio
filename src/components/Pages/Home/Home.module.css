@@ -35,3 +35,19 @@
   .heroActions { flex-direction:column; align-items:flex-start; }
   .heroPortrait { height:400px; }
 }
+
+.downloadBtn { width: 175px; position: relative; overflow: hidden; }
+.iconWrapper { position: relative; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; }
+.downloadIcon, .checkIcon { position: absolute; transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease; }
+.downloadIcon { transform: translateY(0); opacity: 1; }
+.checkIcon { transform: translateY(-20px); opacity: 0; color: var(--lime); }
+.downloaded .downloadIcon { transform: translateY(20px); opacity: 0; }
+.downloaded .checkIcon { transform: translateY(0); opacity: 1; }
+
+.btnTextWrapper { position: relative; height: 12px; display: flex; flex-direction: column; overflow: hidden; justify-content: center; }
+.textOriginal, .textSuccess { transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); line-height: 12px; }
+.textOriginal { transform: translateY(0); }
+.textSuccess { position: absolute; transform: translateY(-20px); color: var(--lime); }
+.downloaded .textOriginal { transform: translateY(20px); }
+.downloaded .textSuccess { transform: translateY(0); }
+.downloaded { border-color: var(--lime) !important; }
