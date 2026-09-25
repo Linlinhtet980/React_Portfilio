@@ -29,7 +29,7 @@ export default function Home() {
           <a className="button button-primary" href="#projects">View projects <ArrowUpRight size={17} /></a>
           <a 
             className={`button button-ghost ${styles.downloadBtn} ${isDownloaded ? styles.downloaded : ''}`} 
-            href="/Lin_Thu_Rein_Htet_Web_Developer_CV.pdf" 
+            href="/public/Maastricht Blue Minimalist Professional Resume Web Developer.pdf" 
             download
             onClick={handleDownload}
           >
