@@ -1,4 +1,4 @@
-﻿import { ArrowUpRight, Download, Check } from 'lucide-react'
+import { ArrowUpRight, Download, Check } from 'lucide-react'
 import { useState } from 'react'
 import styles from './Home.module.css'
 import heroImage from '../../../assets/Lin thu rein htet.jpg'
@@ -29,7 +29,7 @@ export default function Home() {
           <a className="button button-primary" href="#projects">View projects <ArrowUpRight size={17} /></a>
           <a 
             className={`button button-ghost ${styles.downloadBtn} ${isDownloaded ? styles.downloaded : ''}`} 
-            href="/public/Maastricht Blue Minimalist Professional Resume Web Developer.pdf" 
+            href="/Lin_Thu_Rein_Htet_CV.pdf" 
             download
             onClick={handleDownload}
           >
