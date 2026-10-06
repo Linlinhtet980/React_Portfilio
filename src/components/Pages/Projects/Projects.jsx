@@ -1,4 +1,4 @@
-﻿import { ArrowUpRight, GitBranch, ExternalLink } from 'lucide-react'
+import { ArrowUpRight, GitBranch, ExternalLink } from 'lucide-react'
 import styles from './Projects.module.css'
 import ScrollReveal from '../../ScrollReveal/ScrollReveal'
 
@@ -24,11 +24,11 @@ const projects = [
   },
   { 
     number: '03', 
-    title: 'Hotel Management System', 
+    title: '4You Medical System', 
     type: 'Management', 
-    icons: ['fa-brands fa-laravel', 'fa-brands fa-php'],
-    repo: 'HotelMS', 
-    description: 'A comprehensive hotel management dashboard built for administrators. It streamlines daily operations by centralizing room reservations, guest management, and operational workflows into a single secure platform.', 
+    icons: ['fa-brands fa-react', 'fa-brands fa-js', 'fa-brands fa-css3-alt'],
+    repo: '4You_Medical', 
+    description: 'A React-based clinic management dashboard featuring role-based access control, interactive data tables, and dynamic PDF generation. Built with pure CSS modules for a fast, responsive user interface.', 
     accent: 'blue' 
   },
   { 
